@@ -5,27 +5,51 @@ import axios from '../../../axios.js';
 import requests from '../../../request.js';
 
 export const Banner = () => {
-	const [movie, setMovie] = useState([]);
+	// const [movie, setMovie] = useState([]);
+	//
+	// useEffect(() => {
+	// 	async function fetchData() {
+	// 		const request = await axios.get(requests.fetchNetflixOriginals);
+	// 		setMovie(
+	// 			request.data.results[
+	// 				Math.floor(Math.random() * request.data.results.length - 1)
+	// 			]
+	// 		);
+	// 	}
+	//
+	// 	fetchData();
+	// }, []);
+
+	const [movies, setMovies] = useState([]);
 
 	useEffect(() => {
 		async function fetchData() {
 			const request = await axios.get(requests.fetchNetflixOriginals);
-			setMovie(
-				request.data.results[
-					Math.floor(Math.random() * request.data.results.length - 1)
-				]
-			);
+			setMovies(request.data.results);
 		}
 
 		fetchData();
 	}, []);
 
+	const [activeMovieIndex, setActiveMovieIndex] = useState(0);
+	const activeMovie = movies[activeMovieIndex];
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setActiveMovieIndex(activeMovieIndex + 1);
+		}, 8000);
+
+		return () => {
+			clearInterval(interval);
+		};
+	}, [activeMovieIndex]);
+
 	function truncate(string, n) {
 		return string?.length > n ? string.substr(0, n - 1) + '...' : string;
 	}
 
-	const description = movie.overview;
-	const poster = movie?.backdrop_path;
+	const description = activeMovie?.overview;
+	const poster = activeMovie?.backdrop_path;
 
 	return (
 		<section
@@ -39,10 +63,12 @@ export const Banner = () => {
 			<div className={styles.overlay}></div>
 			<div className={styles.content}>
 				<h2 className={styles.title}>
-					{movie?.title || movie?.name || movie?.original_name}
+					{activeMovie?.title ||
+						activeMovie?.name ||
+						activeMovie?.original_name}
 				</h2>
 				<p className={styles.moviedescription}>
-					{truncate(movie?.overview, 150)}
+					{truncate(activeMovie?.overview, 150)}
 				</p>
 				<div className={styles.buttons}>
 					<button className={styles.button}>

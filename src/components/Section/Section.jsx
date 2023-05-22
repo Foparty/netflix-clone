@@ -36,6 +36,8 @@ export const Section = ({ title, fetchUrl, isLargeRow }) => {
 									isLargeRow ? movie.poster_path : movie.backdrop_path
 								}`}
 								alt={movie.name}
+								height={isLargeRow ? '260px' : '99px'}
+								width={'auto'}
 							/>
 						)
 				)}
