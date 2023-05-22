@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './Navbar.module.css';
-import { avatar, logo } from '../../../public/img/index.js';
+import { avatar, logo, tmdb } from '../../../public/img/index.js';
 import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
@@ -22,12 +22,18 @@ export const Navbar = () => {
 	return (
 		<header className={`${styles.header} ${headerClass}`}>
 			<div className={styles.nav}>
-				<Link to={'/'}>
+				<Link className={styles.logos} to={'/'}>
 					<img
 						className={styles.logo}
 						src={logo}
 						alt="netflix logo"
 						height={30}
+					/>
+					<img
+						className={styles.tmdb}
+						src={tmdb}
+						alt="netflix logo"
+						height={8}
 					/>
 				</Link>
 				<Link to={'/profile'}>

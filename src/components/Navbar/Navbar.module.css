@@ -18,3 +18,13 @@
 	display: flex;
 	justify-content: space-between;
 }
+
+.logos {
+	display: flex;
+	gap: 1rem;
+	align-items: baseline;
+
+}
+.tmdb {
+	height: ;
+}
