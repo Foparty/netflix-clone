@@ -36,7 +36,7 @@ export const Navbar = () => {
 						height={8}
 					/>
 				</Link>
-				<Link to={'/profile'}>
+				<Link to={'/home/profile'}>
 					<img
 						className={styles.avatar}
 						src={avatar}
