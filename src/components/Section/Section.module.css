@@ -1,0 +1,39 @@
+.section {
+
+}
+
+.title {
+	color: white;
+	padding: .4rem 2rem;
+}
+
+.posters {
+	display: flex;
+	overflow-x: scroll;
+	gap: .7rem;
+	/*padding: 0 2rem;*/
+	width: 100%;
+
+}
+
+.posters::-webkit-scrollbar {
+	display: none;
+}
+
+.largeposter {
+	max-height: 16.25rem;
+	object-fit: contain;
+	transition: transform 450ms;
+
+}
+
+.normalposter {
+	max-height: 6.25rem;
+	object-fit: contain;
+	transition: transform 450ms;
+
+}
+
+.largeposter:hover, .normalposter:hover {
+	transform: scale(1.08);
+}
