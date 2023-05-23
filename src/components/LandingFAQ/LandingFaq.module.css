@@ -1,0 +1,61 @@
+.accordion {
+	display: flex;
+	flex-direction: column;
+	gap: .7rem;
+}
+
+.panel {
+	position: relative;
+
+
+}
+
+.paneltitle {
+	width: 100%;
+	display: block;
+
+
+}
+
+.trigger {
+	background-color: #132144;
+	color: white;
+	font-weight: 400;
+	padding: 1rem 1rem;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	justify-content: space-between;
+	border: none;
+}
+
+.trigger svg {
+	width: 2.4rem;
+	height: 2.4rem;
+	aspect-ratio: 1;
+}
+
+.trigger:has([aria-expanded='true']) {
+	flex-basis: 2000%;
+}
+
+.content {
+	max-height: 0;
+	overflow: hidden;
+}
+
+.answer {
+	border-top: 1px solid black;
+	background-color: #132144;
+	color: white;
+	padding: 1rem;
+	transition: max-height 0.3s ease-in-out;
+	max-height: 0;
+	overflow: hidden;
+}
+
+.active .answer {
+	max-height: 1000px; /* Adjust the value as per your content height */
+	transition: max-height 0.3s ease-in-out;
+}
+

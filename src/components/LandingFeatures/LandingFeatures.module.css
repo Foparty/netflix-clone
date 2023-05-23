@@ -1,0 +1,44 @@
+.features {
+	margin: 3rem 0;
+	border-radius: 1rem;
+	background: linear-gradient(146.51deg, rgba(0, 8, 29, 0.75) 0%, rgba(53, 13, 49, 0.6) 80.34%, rgba(132, 5, 25, 0.6) 110.79%);
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	align-items: center;
+}
+
+.features > article {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 3rem;
+	gap: 1rem;
+	position: relative;
+}
+
+.features > article:nth-child(even) .textcontainer {
+	order: 2;
+}
+
+.features > article:not(:last-child)::after {
+	content: '';
+	position: absolute;
+	bottom: -1rem;
+	width: 90%;
+	height: .4rem;
+	background-color: rgba(255, 255, 255, .1);
+
+}
+
+.textcontainer {
+	flex: .52
+}
+
+.textcontainer h2 {
+	margin-bottom: 1rem;
+}
+
+.imgcontainer {
+	flex: .48;
+}

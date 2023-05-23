@@ -99,3 +99,18 @@ select {
 		scroll-behavior: auto !important;
 	}
 }
+
+.answer {
+	border-top: 1px solid black;
+	background-color: #132144;
+	color: white;
+	padding: 1rem;
+	transition: max-height 0.3s ease-in-out;
+	max-height: 0;
+	overflow: hidden;
+}
+
+.active > .answer {
+	max-height: 1000px; /* Adjust the value as per your content height */
+	transition: max-height 0.3s ease-in-out;
+}

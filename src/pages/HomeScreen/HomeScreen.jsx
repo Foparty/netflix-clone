@@ -14,11 +14,19 @@ export const HomeScreen = () => {
 				isLargeRow
 			/>
 			<Section title="Trending Now" fetchUrl={request.fetchTrending} />
-			<Section title="Top Rated" fetchUrl={request.fetchTopRated} />
+			<Section title="Top Rated" fetchUrl={request.fetchTopRated} isLargeRow />
 			<Section title="Action Movies" fetchUrl={request.fetchActionMovies} />
-			<Section title="Comedy Movies" fetchUrl={request.fetchComedyMovies} />
+			<Section
+				title="Comedy Movies"
+				fetchUrl={request.fetchComedyMovies}
+				isLargeRow
+			/>
 			<Section title="Horror Movies" fetchUrl={request.fetchHorrorMovies} />
-			<Section title="Romance Movies" fetchUrl={request.fetchRomanceMovies} />
+			<Section
+				title="Romance Movies"
+				fetchUrl={request.fetchRomanceMovies}
+				isLargeRow
+			/>
 			<Section title="Documentaries" fetchUrl={request.fetchDocumentaries} />
 		</>
 	);
