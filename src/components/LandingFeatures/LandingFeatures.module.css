@@ -10,6 +10,7 @@
 
 .features > article {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	padding: 0 3rem;
@@ -17,9 +18,6 @@
 	position: relative;
 }
 
-.features > article:nth-child(even) .textcontainer {
-	order: 2;
-}
 
 .features > article:not(:last-child)::after {
 	content: '';
@@ -41,4 +39,14 @@
 
 .imgcontainer {
 	flex: .48;
+}
+
+@media (width > 42rem) {
+	.features > article {
+		flex-direction: row;
+	}
+
+	.features > article:nth-child(even) .textcontainer {
+		order: 2;
+	}
 }
