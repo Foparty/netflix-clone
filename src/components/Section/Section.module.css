@@ -16,20 +16,22 @@
 
 }
 
+
 .posters::-webkit-scrollbar {
 	display: none;
 }
 
+
 .largeposter {
 	max-height: 16.25rem;
-	object-fit: contain;
+	object-fit: cover;
 	transition: transform 450ms;
 
 }
 
 .normalposter {
 	max-height: 6.25rem;
-	object-fit: contain;
+	object-fit: cover;
 	transition: transform 450ms;
 
 }
@@ -37,3 +39,9 @@
 .largeposter:hover, .normalposter:hover {
 	transform: scale(1.08);
 }
+
+
+.normalposter:hover + .postertitle {
+	display: block;
+}
+

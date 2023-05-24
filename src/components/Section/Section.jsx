@@ -37,10 +37,11 @@ export const Section = ({ title, fetchUrl, isLargeRow }) => {
 								}`}
 								alt={movie.name}
 								height={isLargeRow ? '260px' : '99px'}
-								width={'auto'}
+								width={isLargeRow ? '173.32px' : '175.98px'}
 							/>
 						)
 				)}
+				{console.log(movies)}
 			</div>
 		</section>
 	);
