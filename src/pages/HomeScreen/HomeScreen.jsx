@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './HomeScreen.module.css';
 import { Banner } from '../../components/Banner/Banner.jsx';
 import request from '../../../request.js';

@@ -3,7 +3,7 @@
 	width: calc(100% - 4rem);
 	margin-inline: auto;
 	color: white;
-	margin-bottom: 3rem;
+	padding-bottom: 3rem;
 }
 
 .header {
