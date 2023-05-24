@@ -6,6 +6,7 @@ import { LandingFaq } from '../../components/LandingFAQ/LandingFaq.jsx';
 import { logo } from '../../../public/img/index.js';
 import { TbWorld } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
+import { LandingFooter } from '../../components/LandingFooter/LandingFooter.jsx';
 
 export const Landing = () => {
 	return (
@@ -33,6 +34,7 @@ export const Landing = () => {
 				<LandingBanner />
 				<LandingFeatures />
 				<LandingFaq />
+				<LandingFooter />
 			</main>
 		</>
 	);

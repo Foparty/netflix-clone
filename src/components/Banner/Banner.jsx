@@ -5,21 +5,6 @@ import axios from '../../../axios.js';
 import requests from '../../../request.js';
 
 export const Banner = () => {
-	// const [movie, setMovie] = useState([]);
-	//
-	// useEffect(() => {
-	// 	async function fetchData() {
-	// 		const request = await axios.get(requests.fetchNetflixOriginals);
-	// 		setMovie(
-	// 			request.data.results[
-	// 				Math.floor(Math.random() * request.data.results.length - 1)
-	// 			]
-	// 		);
-	// 	}
-	//
-	// 	fetchData();
-	// }, []);
-
 	const [movies, setMovies] = useState([]);
 
 	useEffect(() => {
@@ -36,13 +21,15 @@ export const Banner = () => {
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setActiveMovieIndex(activeMovieIndex + 1);
+			const randomMovie = Math.floor(Math.random() * movies.length);
+			console.log(randomMovie);
+			setActiveMovieIndex(randomMovie);
 		}, 8000);
 
 		return () => {
 			clearInterval(interval);
 		};
-	}, [activeMovieIndex]);
+	}, [activeMovieIndex, activeMovie]);
 
 	function truncate(string, n) {
 		return string?.length > n ? string.substr(0, n - 1) + '...' : string;
@@ -67,9 +54,7 @@ export const Banner = () => {
 						activeMovie?.name ||
 						activeMovie?.original_name}
 				</h2>
-				<p className={styles.moviedescription}>
-					{truncate(activeMovie?.overview, 150)}
-				</p>
+				<p className={styles.moviedescription}>{truncate(description, 150)}</p>
 				<div className={styles.buttons}>
 					<button className={styles.button}>
 						<FaPlay />
