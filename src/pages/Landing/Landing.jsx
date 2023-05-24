@@ -26,7 +26,7 @@ export const Landing = () => {
 						</select>
 					</label>
 					<button>
-						<Link to={'/home'}>Sign In</Link>
+						<Link to={'/login'}>Sign In</Link>
 					</button>
 				</div>
 			</header>

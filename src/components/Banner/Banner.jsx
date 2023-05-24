@@ -22,7 +22,6 @@ export const Banner = () => {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			const randomMovie = Math.floor(Math.random() * movies.length);
-			console.log(randomMovie);
 			setActiveMovieIndex(randomMovie);
 		}, 8000);
 
