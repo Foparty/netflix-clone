@@ -36,12 +36,10 @@
 
 }
 
-.largeposter:hover, .normalposter:hover {
-	transform: scale(1.08);
-}
+/*.largeposter:hover, .normalposter:hover {*/
+/*	transform: scale(1.08);*/
+/*}*/
 
 
-.normalposter:hover + .postertitle {
-	display: block;
-}
+
 

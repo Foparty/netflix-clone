@@ -3,6 +3,7 @@ import styles from './Banner.module.css';
 import { FaPlay } from 'react-icons/fa';
 import axios from '../../../axios.js';
 import requests from '../../../request.js';
+import { motion } from 'framer-motion';
 
 export const Banner = () => {
 	const [movies, setMovies] = useState([]);
@@ -38,14 +39,12 @@ export const Banner = () => {
 	const poster = activeMovie?.backdrop_path;
 
 	return (
-		<section
-			className={styles.banner}
-			style={{
-				backgroundImage: `url("https://image.tmdb.org/t/p/original${poster}")`,
-				backgroundPosition: 'center center',
-				backgroundSize: 'cover',
-			}}
-		>
+		<section className={styles.banner}>
+			<img
+				className={styles.bannerimg}
+				src={`https://image.tmdb.org/t/p/original${poster}`}
+				alt=""
+			/>
 			<div className={styles.overlay}></div>
 			<div className={styles.content}>
 				<h2 className={styles.title}>
@@ -59,7 +58,9 @@ export const Banner = () => {
 						<FaPlay />
 						Play
 					</button>
-					<button className={styles.button}>My List</button>
+					<motion.button whileHover={{ scale: 1.04 }} className={styles.button}>
+						My List
+					</motion.button>
 				</div>
 			</div>
 		</section>

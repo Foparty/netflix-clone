@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './Section.module.css';
 import axios from '../../../axios.js';
+import { motion } from 'framer-motion';
 
 export const Section = ({ title, fetchUrl, isLargeRow }) => {
 	const [movies, setMovies] = useState([]);
@@ -25,7 +26,10 @@ export const Section = ({ title, fetchUrl, isLargeRow }) => {
 					(movie) =>
 						((isLargeRow && movie.poster_path) ||
 							(!isLargeRow && movie.backdrop_path)) && (
-							<img
+							<motion.img
+								whileHover={{
+									scale: 1.08,
+								}}
 								className={
 									isLargeRow
 										? `${styles.largeposter}`
@@ -41,7 +45,6 @@ export const Section = ({ title, fetchUrl, isLargeRow }) => {
 							/>
 						)
 				)}
-				{console.log(movies)}
 			</div>
 		</section>
 	);
