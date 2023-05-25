@@ -3,6 +3,7 @@ import { BiHomeAlt2, BiMovie } from 'react-icons/bi';
 import { RxMagnifyingGlass } from 'react-icons/rx';
 import { AiOutlineCalendar, AiOutlinePlus } from 'react-icons/ai';
 import { BsDisplay } from 'react-icons/bs';
+import { Link } from 'react-router-dom';
 
 export const SideNav = () => {
 	return (
@@ -14,7 +15,9 @@ export const SideNav = () => {
 				</div>
 				<div className={styles.menugroup}>
 					<BiHomeAlt2 />
-					<h2 className={styles.menutitle}>Home</h2>
+					<h2 className={styles.menutitle}>
+						<Link to={'/'}>Home</Link>
+					</h2>
 				</div>
 				<div className={styles.menugroup}>
 					<AiOutlineCalendar />

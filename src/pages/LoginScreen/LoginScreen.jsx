@@ -74,7 +74,9 @@ export const LoginScreen = () => {
 							placeholder={'password'}
 						/>
 					</div>
-					<button type={'submit'}>Sign In</button>
+					<button type={'submit'}>
+						<Link to={'/home'}>Sign In</Link>
+					</button>
 					<p>
 						New to Netflix?{' '}
 						<span>
