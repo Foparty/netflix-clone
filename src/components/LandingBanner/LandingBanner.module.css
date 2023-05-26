@@ -69,7 +69,7 @@
 	color: rgba(255, 255, 255, 1);
 	padding: .71rem 1rem;
 	border-radius: .31rem;
-	min-width: 21rem;
+	min-width: min(100%, 21rem);
 }
 
 .form input::placeholder {

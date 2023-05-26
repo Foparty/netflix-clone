@@ -98,6 +98,38 @@ export const LandingFaq = () => {
 							</div>
 						</div>
 					))}
+					{/*{questions.map((item, index) => (*/}
+					{/*	<div className={styles.panel} key={index}>*/}
+					{/*		<h2 className={`accordion-header ${styles.paneltitle}`}>*/}
+					{/*			<button*/}
+					{/*				className={`accordion-button collapsed ${styles.trigger}`}*/}
+					{/*				type="button"*/}
+					{/*				data-bs-toggle="collapse"*/}
+					{/*				data-bs-target={`#fluch-colapses${index}`}*/}
+					{/*				aria-expanded="false"*/}
+					{/*				aria-controls="flush-collapseOne"*/}
+					{/*			>*/}
+					{/*				<span>{item.question}</span>*/}
+					{/*				{activeItem === index ? (*/}
+					{/*					<AiOutlineClose className={styles.plusicon} />*/}
+					{/*				) : (*/}
+					{/*					<AiOutlinePlus className={styles.plusicon} />*/}
+					{/*				)}*/}
+					{/*			</button>*/}
+					{/*		</h2>*/}
+					{/*		<div*/}
+					{/*			id={`fluch-colapses${index}`}*/}
+					{/*			className="collapse"*/}
+					{/*			data-bs-parent="#accordionFlushExample"*/}
+					{/*		>*/}
+					{/*			<div className="accordion-body">*/}
+					{/*				{item.answer.map((item, index) => (*/}
+					{/*					<p key={index}>{item}</p>*/}
+					{/*				))}*/}
+					{/*			</div>*/}
+					{/*		</div>*/}
+					{/*	</div>*/}
+					{/*))}*/}
 				</div>
 				{/*{questions.map((item, index) => (*/}
 				{/*	<div key={index} className={styles.panel}>*/}
