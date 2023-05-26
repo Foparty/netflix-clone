@@ -1,20 +1,25 @@
 .accordion {
+	margin: 2rem 0;
 	display: flex;
 	flex-direction: column;
 	gap: .7rem;
 }
 
+.color {
+	background-color: #132144;
+	color: white;
+}
+
 .panel {
 	position: relative;
-
-
+	background-color: #132144;
+	color: white;
 }
+
 
 .paneltitle {
 	width: 100%;
 	display: block;
-
-
 }
 
 .trigger {

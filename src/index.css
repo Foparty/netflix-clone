@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+:root {
+	--bs-primary-text-emphasis: white;
+	--bs-primary-bg-subtle: #132144;
+	--bs-accordion-btn-color: transparent;
+	--bs-border-color: none;
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -114,4 +121,8 @@ select {
 	padding: 1rem;
 	max-height: 1000px; /* Adjust the value as per your content height */
 	transition: max-height 0.2s ease-in-out;
+}
+
+.accordion-button:after {
+	content: none;
 }

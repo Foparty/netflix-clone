@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from './LandingFaq.module.css';
 import { AiOutlinePlus, AiOutlineClose } from 'react-icons/ai';
+import Accordion from 'react-bootstrap/Accordion';
 
 const questions = [
 	{
@@ -53,16 +54,29 @@ export const LandingFaq = () => {
 		<>
 			<h2 className={styles.title}>Frequently asked questions</h2>
 			<div className={styles.accordion}>
-				{questions.map((item, index) => (
-					<div key={index} className={styles.panel}>
-						<div
-							className={`accordion-item ${
-								activeItem === index ? 'active' : ''
-							}`}
-							onClick={() => handleItemClick(index)}
-						>
-							<h2 className={styles.paneltitle}>
-								<button className={styles.trigger}>
+				{/*<Accordion>*/}
+				{/*	{questions.map((item, index) => (*/}
+				{/*		<Accordion.Item eventKey={index} key={index}>*/}
+				{/*			<Accordion.Header>{item.question}</Accordion.Header>*/}
+				{/*			<Accordion.Body>{item.answer}</Accordion.Body>*/}
+				{/*		</Accordion.Item>*/}
+				{/*	))}*/}
+				{/*</Accordion>*/}
+				<div
+					className={`accordion accordion-flush ${styles.color}`}
+					id="accordionFlushExample"
+				>
+					{questions.map((item, index) => (
+						<div className={`accordion-item ${styles.panel}`} key={index}>
+							<h2 className={`accordion-header ${styles.paneltitle}`}>
+								<button
+									className={`accordion-button collapsed ${styles.trigger}`}
+									type="button"
+									data-bs-toggle="collapse"
+									data-bs-target={`#fluch-colapse${index}`}
+									aria-expanded="false"
+									aria-controls="flush-collapseOne"
+								>
 									<span>{item.question}</span>
 									{activeItem === index ? (
 										<AiOutlineClose className={styles.plusicon} />
@@ -71,15 +85,47 @@ export const LandingFaq = () => {
 									)}
 								</button>
 							</h2>
-
-							<div className={'answer'}>
-								{item.answer.map((item, index) => (
-									<p key={index}>{item}</p>
-								))}
+							<div
+								id={`fluch-colapse${index}`}
+								className="accordion-collapse collapse"
+								data-bs-parent="#accordionFlushExample"
+							>
+								<div className="accordion-body">
+									{item.answer.map((item, index) => (
+										<p key={index}>{item}</p>
+									))}
+								</div>
 							</div>
 						</div>
-					</div>
-				))}
+					))}
+				</div>
+				{/*{questions.map((item, index) => (*/}
+				{/*	<div key={index} className={styles.panel}>*/}
+				{/*		<div*/}
+				{/*			className={`accordion-item ${*/}
+				{/*				activeItem === index ? 'active' : ''*/}
+				{/*			}`}*/}
+				{/*			onClick={() => handleItemClick(index)}*/}
+				{/*		>*/}
+				{/*			<h2 className={styles.paneltitle}>*/}
+				{/*				<button className={styles.trigger}>*/}
+				{/*					<span>{item.question}</span>*/}
+				{/*					{activeItem === index ? (*/}
+				{/*						<AiOutlineClose className={styles.plusicon} />*/}
+				{/*					) : (*/}
+				{/*						<AiOutlinePlus className={styles.plusicon} />*/}
+				{/*					)}*/}
+				{/*				</button>*/}
+				{/*			</h2>*/}
+
+				{/*			<div className={'answer'}>*/}
+				{/*				{item.answer.map((item, index) => (*/}
+				{/*					<p key={index}>{item}</p>*/}
+				{/*				))}*/}
+				{/*			</div>*/}
+				{/*		</div>*/}
+				{/*	</div>*/}
+				{/*))}*/}
 			</div>
 		</>
 	);
