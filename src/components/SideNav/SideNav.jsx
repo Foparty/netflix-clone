@@ -16,7 +16,9 @@ export const SideNav = () => {
 				<div className={styles.menugroup}>
 					<BiHomeAlt2 />
 					<h2 className={styles.menutitle}>
-						<Link to={'/'}>Home</Link>
+						<Link scroll={true} to={'/'}>
+							Home
+						</Link>
 					</h2>
 				</div>
 				<div className={styles.menugroup}>
